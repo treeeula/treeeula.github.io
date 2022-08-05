@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>atomic rainbowify</title>
+	</head>
+	<body>
+		<style>body{background-color:black;font-color:white;font-style:arial;color:white} a{color:blue;text-decoration:none} a:hover{color:purple}</style>
+		<input type="text" id="input"><br>
+		<button id="button">rainbowify</button><br><br><br>
+		<input type="text" id="output" readonly size=100><br>
+		<button id="copy">copy</button><br>
+		<div id="copyt"></div>
+		<script>
+			function rainbow(t){let e="";for(let n of t)null===n.match(/\S/g)?e+=`${n}`:e+=`{*${n}}`;return e}function copyte(){navigator.clipboard.writeText(output.value)}function l(){copyt.innerHTML=""}let input=document.getElementById("input"),button=document.getElementById("button"),output=document.getElementById("output"),copy=document.getElementById("copy"),copyt=document.getElementById("copyt");button.onclick=()=>{output.value=rainbow(input.value)},copy.onclick=function(){copyt.innerHTML="Copied",setTimeout((()=>{copyt.innerHTML=""}),5e3),copyte()};
+		</script>
+	</body>
+</html>
