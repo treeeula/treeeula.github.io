@@ -88,8 +88,6 @@ button.onclick = () => {
     tsr.innerText = calcrack(0,0,0,supporterrackinput.value,0).toLocaleString()
     tor.innerText = calcrack(0,0,0,0,oprackinput.value).toLocaleString()
 
-    // tb.innerText = bronzeinput.value
-    // ts.innerText
     console.log(`Total Singular: ${totalprint_hour} | Total Rack ${totalrack_hour} | Total ${total_hour}`)
     
 }
