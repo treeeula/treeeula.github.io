@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Printer Calculator</title>
+        <style>body{margin-left:20px;background-color:black;color:white;font-style:arial;color:white} a{color:blue;text-decoration:none} a:hover{color:purple}</style>
+    </head>
+    <body>
+        <h1>Uses upgraded rates, does not include recharges</h1><br><br>
+        <label><span style="color: #99320D">Bronze</span> Printers</label> <input type="number" id="bronzeinput" placeholder="0"><br>
+        <label><span style="color: #6B6653">Silver</span> Printers</label> <input type="number" id="silverinput" placeholder="0"><br>
+        <label><span style="color: #9E9412">Gold</span> Printers</label> <input type="number" id="goldinput" placeholder="0"><br>
+        <label><span style="color: #C46003">VIP</span> Printers</label> <input type="number" id="vipinput" placeholder="0"><br>
+        <label><span style="color: #0FAD85">VIP+</span> Printers</label> <input type="number" id="vippinput" placeholder="0"><br>
+        <label><span style="color: #00B503">Supporter</span> Printers</label> <input type="number" id="supporterinput" placeholder="0"><br>
+        <label><span style="color: white">OnePrints (Singular!)</span></label> <input type="number" id="opinput" placeholder="0"><br><br>
+
+        <label><span style="color: grey">Default Rack</span></label> <input type="number" id="rackinput" placeholder="0"><br>
+        <label><span style="color: yellow">VIP Rack</span></label> <input type="number" id="viprackinput" placeholder="0"><br>
+        <label><span style="color: hotpink">VIP+ Rack</span></label> <input type="number" id="vipprackinput" placeholder="0"><br>
+        <label><span style="color:#FF9999">S</span><span style="color:#FFC599">u</span><span style="color:#FFF099">p</span><span style="color:#E2FF99">p</span><span style="color:#B6FF99">o</span><span style="color:#99FFA8">r</span><span style="color:#99FFD3">t</span><span style="color:#99FFFF">e</span><span style="color:#99D3FF">r</span> <span style="color:#99A8FF">R</span><span style="color:#B699FF">a</span><span style="color:#E299FF">c</span><span style="color:#FF99F0">k</span><span style="color:#FF99C5">s</span></label> <input type="number" id="supporterrackinput" placeholder="0"><br>
+        <label><span style="color: white">OnePrint Duo</span></label> <input type="number" id="oprackinput" placeholder="0"><br><br>
+        <label>Amount of Hours</label> <input type="number" id="hourinput" placeholder="1" value="1"><br>
+        <button id="calc">Press me!</button> <br><br>
+        <div>
+            <p>Total: <span id="total"></span></p><br>
+            <p>Total from <span style="color: #99320D">Bronze</span> Printers: <span id="totalbronze"></span></p>
+            <p>Total from <span style="color: #6B6653">Silver</span> Printers: <span id="totalsilver"></span></p>
+            <p>Total from <span style="color: #9E9412">Gold</span> Printers: <span id="totalgold"></span></p>
+            <p>Total form <span style="color: #C46003">VIP</span> Printers: <span id="totalvip"></span></p>
+            <p>Total from <span style="color: #0FAD85">VIP+</span> Printers: <span id="totalvipp"></span></p>
+            <p>Total from <span style="color: #00B503">Supporter</span> Printers: <span id="totalsupporter"></span></p>
+            <p>Total from <span style="color: white">OnePrints (Singular!)</span>: <span id="totaloneprint"></span></p><br>
+            
+            <p>Total from <span style="color: grey">Default Racks</span>: <span id="totalrack"></span></p>
+            <p>Total from <span style="color: yellow">VIP Racks</span>: <span id="totalviprack"></span></p>
+            <p>Total from <span style="color: hotpink">VIP+ Racks</span>: <span id="totalvipprack"></span></span></p>
+            <p>Total from <span style="color:#FF9999">S</span><span style="color:#FFC599">u</span><span style="color:#FFF099">p</span><span style="color:#E2FF99">p</span><span style="color:#B6FF99">o</span><span style="color:#99FFA8">r</span><span style="color:#99FFD3">t</span><span style="color:#99FFFF">e</span><span style="color:#99D3FF">r</span> <span style="color:#99A8FF">R</span><span style="color:#B699FF">a</span><span style="color:#E299FF">c</span><span style="color:#FF99F0">k</span><span style="color:#FF99C5">s</span>: <span id="totalsupporterrack"></span></span></p>
+            <p>Total from <span style="color: white">OnePrint Duos</span>: <span id="totaloprack"></span></span></p>
+        </div>
+        <script src="./script_with_hour_input.js"></script>
+    </body>
+</html>
+
+
