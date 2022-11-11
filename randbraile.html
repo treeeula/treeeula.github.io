@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>random braile</title>
+	</head>
+	<body>
+		<style>body{background-color:black;color:white;font-style:arial;color:white} a{color:blue;text-decoration:none} a:hover{color:purple}</style>
+		<input type="text" id="input" type="number" placeholder = "1"><br>
+		<button id="button">get braile</button><br><br><br>
+		<input type="text" id="output" readonly size=100><br>
+		<button id="copy">copy</button><br>
+		<div id="copyt"></div>
+    <script>const braile=["⠁","⠂","⠃","⠄","⠅","⠆","⠇","⠈","⠉","⠊","⠋","⠌","⠍","⠎","⠏","⠐","⠑","⠒","⠓","⠔","⠕","⠖","⠗","⠘","⠙","⠚","⠛","⠜","⠝","⠞","⠟","⠠","⠡","⠢","⠣","⠤","⠥","⠦","⠧","⠨","⠩","⠪","⠫","⠬","⠭","⠮","⠯","⠰","⠱","⠲","⠳","⠴","⠵","⠶","⠷","⠸","⠹","⠺","⠻","⠼","⠽","⠾","⠿"];function randint(t,n){return Math.floor(Math.random()*(n-t))+t}function genBraile(t){let n="";for(var e=0;e<t;e++)n+=braile[randint(0,braile.length-1)],console.log(n);return n}let btn1=document.getElementById("button"),num=document.getElementById("input"),btn2=document.getElementById("copy"),outbox=document.getElementById("output");function copy(t){navigator.clipboard.writeText(t)}btn1.onclick=()=>{var t=genBraile(num.value);copy(outbox.value=t)},btn2.onclick=()=>{copy(outbox.value),alert("Copied.")}; </script>
+  </body>
+</html>
