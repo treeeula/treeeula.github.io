@@ -1,5 +1,6 @@
 /*
 || 11/16/2022 ~3:00 AM MST <|> Add Supporter+
+|| 11/17/2022 ~3:44 PM MST <|> fix
 */
 
 
@@ -54,11 +55,11 @@ const rates = {
 }
 
 const rackrates = {
-    rack: rates.bronze+rates.silver+rates.bronze+rates.gold-75000,
-    viprack: rates.bronze+rates.silver+rates.silver+rates.bronze+rates.gold+rates.vip-95000,
-    vipprack: rates.bronze+rates.silver+rates.silver+rates.bronze+rates.gold+rates.vip+rates.vipp-150000,
-    supporterrack: rates.bronze+rates.silver+rates.silver+rates.bronze+rates.gold+rates.vip+rates.vipp+rates.supporter,
-    supporterprack: rates.bronze+rates.silver+rates.silver+rates.bronze+rates.gold+rates.vip+rates.vipp+rates.supporter+rates.supporterp-175000, // thx brank
+    rack: rates.bronze+rates.bronze+rates.gold-75000-75000,
+    viprack: rates.bronze+rates.silver+rates.bronze+rates.gold+rates.vip-95000-95000,
+    vipprack: rates.bronze+rates.silver+rates.bronze+rates.gold+rates.vip+rates.vipp-150000-150000,
+    supporterrack: rates.bronze+rates.silver+rates.bronze+rates.gold+rates.vip+rates.vipp+rates.supporter,
+    supporterprack: rates.bronze+rates.bronze+rates.silver+rates.gold+rates.vip+rates.vipp+rates.supporter+rates.supporterp-175000-175000, // thx brank
     oneprintrack: rates.oneprint+rates.oneprint
 
 }
@@ -68,7 +69,16 @@ function calcprinter(b, s, g, v, vp, su, sup, o) { // ALL INPUTS MUST BE SET
 }
 
 function calcrack(d,v,vp,s,sp,o) { // ALL INPUTS MUST BE SET
-    return d*rackrates.rack+v*rackrates.viprack+vp*rackrates.vipprack+s*rackrates.supporterrack+rackrates.supporterprack*sp+o*rackrates.oneprintrack
+    let a=0;
+	a += d*rackrates.rack
+	a += v*rackrates.viprack
+	a += vp*rackrates.vipprack
+	a += s*rackrates.supporterrack
+	a += sp*rackrates.supporterprack
+	a += o*rackrates.oneprintrack
+	
+	return a
+
 }
 
 const button = document.getElementById("calc")
@@ -94,14 +104,14 @@ button.onclick = () => {
     tv.innerText = calcprinter(0,0,0,vipinput.value,0,0,0,0).toLocaleString()
     tvp.innerText = calcprinter(0,0,0,0,vippinput.value,0,0,0).toLocaleString()
     tsu.innerText = calcprinter(0,0,0,0,0,supporterinput.value,0,0).toLocaleString()
-    tsup.innerText = calcprinter(0,0,0,0,0,supporterpinput.value,0).toLocaleString()
+    tsup.innerText = calcprinter(0,0,0,0,0,0,supporterpinput.value,0).toLocaleString()
     to.innerText = calcprinter(0,0,0,0,0,0,0,opinput.value).toLocaleString()
 
     tr.innerText = calcrack(rackinput.value,0,0,0,0,0).toLocaleString()
     tvr.innerText = calcrack(0,viprackinput.value,0,0,0,0).toLocaleString()
     tvpr.innerText = calcrack(0,0,vipprackinput.value,0,0,0).toLocaleString()
     tsr.innerText = calcrack(0,0,0,supporterrackinput.value,0,0).toLocaleString()
-    tspr.innerText = calcrack(0,0,0,0,0,supporterpinput.value,0,0).toLocaleString()
+    tspr.innerText = calcrack(0,0,0,0,supporterprackinput.value,0).toLocaleString()
     tor.innerText = calcrack(0,0,0,0,0,oprackinput.value).toLocaleString()
 
     console.log(`Total Singular: ${totalprint_hour} | Total Rack ${totalrack_hour} | Total ${total_hour}`)
